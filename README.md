@@ -3,44 +3,48 @@
 ## AIM:
 To develop a Spring Boot application that performs CRUD (Create, Read, Update, Delete) operations on a Student entity using Spring Data JPA (Hibernate).
 
-## ALGORITHM:
-Create Spring Boot Project
+## ALGORITHM
 
-Add dependencies: Spring Web, Spring Data JPA, H2 Database or MySQL, Spring Boot DevTools
+### 1. Create Spring Boot Project
 
-Configure application.properties
+Add dependencies:
 
-Define database connection
+* Spring Web
+* Spring Data JPA
+* H2 Database or MySQL
+* Spring Boot DevTools
 
-Enable Hibernate auto DDL
+### 2. Configure application.properties
 
-Create Student Entity Class
+* Define database connection
+* Enable Hibernate auto DDL
 
-Annotate with @Entity
+### 3. Create Student Entity Class
 
-Define fields with @Id, @GeneratedValue, etc.
+* Annotate with `@Entity`
+* Define fields with `@Id`, `@GeneratedValue`, etc.
 
-Create StudentRepository
+### 4. Create StudentRepository
 
-Extend JpaRepository<Student, Long> for CRUD methods
+Extend `JpaRepository<Student, Long>` for CRUD methods.
 
-Create StudentController
+### 5. Create StudentController
 
 Handle HTTP methods:
 
-POST /students → Add student
+| HTTP Method | Endpoint         | Operation         |
+| ----------- | ---------------- | ----------------- |
+| POST        | `/students`      | Add student       |
+| GET         | `/students`      | Get all students  |
+| GET         | `/students/{id}` | Get student by ID |
+| PUT         | `/students/{id}` | Update student    |
+| DELETE      | `/students/{id}` | Delete student    |
 
-GET /students → Get all students
 
-GET /students/{id} → Get student by ID
-
-PUT /students/{id} → Update student
-
-DELETE /students/{id} → Delete student
-
-##PROGRAM CODE
+## PROGRAM CODE
 
 ### pom.xml
+```
 <dependencies>
     <!-- Spring Boot Web -->
     <dependency>
@@ -61,15 +65,18 @@ DELETE /students/{id} → Delete student
         <scope>runtime</scope>
     </dependency>
 </dependencies>
+```
  ### application.properties
-
+```
 spring.datasource.url=jdbc:h2:mem:testdb
 spring.datasource.driverClassName=org.h2.Driver
 spring.datasource.username=sa
 spring.datasource.password=
 spring.jpa.hibernate.ddl-auto=update
 spring.h2.console.enabled=true
+```
 ### Student.java
+```
 package com.example.demo.model;
 import jakarta.persistence.*;
 @Entity
@@ -97,7 +104,9 @@ public class Student {
 
     public void setAge(int age) { this.age = age; }
 }
+```
 ### StudentRepository.java
+```
 package com.example.demo.repository;
 
 import com.example.demo.model.Student;
@@ -105,7 +114,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
 }
+```
 ### StudentController.java
+```
 package com.example.demo.controller;
 
 import com.example.demo.model.Student;
@@ -153,7 +164,9 @@ public class StudentController {
         return "Student with ID " + id + " deleted successfully!";
     }
 }
+```
 ### DemoApplication.java
+```
 package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
@@ -165,3 +178,6 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 }
+```
+## Output:
+## Result:
