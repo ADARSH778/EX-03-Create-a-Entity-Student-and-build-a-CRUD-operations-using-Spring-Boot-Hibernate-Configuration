@@ -180,4 +180,24 @@ public class DemoApplication {
 }
 ```
 ## Output:
+### POST /students
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/728edbfa-7fb6-424f-936f-808389a514a0" />
+
+### GET /students
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/75169b8a-9097-414c-a8bc-55cf62ba74a0" />
+
+### GET /students/:id
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/f4de5fb1-8c29-4e2c-a6f4-f2a2b1fbef1e" />
+
+### PUT /students/:id
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/32e10002-87b0-467d-830a-2e0d6eaa716d" />
+
+### DELETE /students/:id
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/413a91fe-05fe-4306-907b-8cca25ac0f78" />
+
 ## Result:
+Thus, the Spring Boot application was successfully developed to perform CRUD (Create, Read, Update, Delete) operations on the Student entity using Spring Data JPA (Hibernate).
